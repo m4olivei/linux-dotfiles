@@ -1,0 +1,15 @@
+export ZSH="$HOME/.oh-my-zsh"
+
+ZSH_THEME="robbyrussell"
+CASE_SENSITIVE="true"
+
+# Remind me to update when it's time instead of updating automatically.
+zstyle ':omz:update' mode reminder
+
+plugins=(git jsontools man)
+
+# Everything in $ZSH/custom/*.zsh (aliases, env, sandbar) is sourced by oh-my-zsh.
+source $ZSH/oh-my-zsh.sh
+
+# Per-VM tweaks that don't belong in the repo.
+[ -f "$HOME/.zshrc.local" ] && source "$HOME/.zshrc.local"
