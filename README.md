@@ -1,6 +1,6 @@
 # linux-dotfiles
 
-My shell setup for Linux VMs: zsh with oh-my-zsh, aliases, environment variables, vim and git defaults. It targets Debian guests created by sandbar (https://github.com/Lullabot/sandbar), and works on any Debian/Ubuntu box with passwordless sudo.
+My shell setup for Linux VMs: zsh with oh-my-zsh, aliases, environment variables, vim and git defaults. It targets Debian guests created by [sandbar](https://github.com/Lullabot/sandbar), and works on any Debian/Ubuntu box with passwordless sudo.
 
 ## Install
 
