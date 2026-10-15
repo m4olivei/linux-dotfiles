@@ -11,5 +11,11 @@ plugins=(git jsontools man)
 # Everything in $ZSH/custom/*.zsh (aliases, env, sandbar) is sourced by oh-my-zsh.
 source $ZSH/oh-my-zsh.sh
 
+# Mark the prompt so a sandbar VM is easy to tell apart from the host. This
+# has to run here: oh-my-zsh loads custom/*.zsh before the theme sets PROMPT.
+if [ -n "$IS_SANDBOX" ]; then
+  PROMPT="%{$fg_bold[magenta]%}[sandbar:%m]%{$reset_color%} $PROMPT"
+fi
+
 # Per-VM tweaks that don't belong in the repo.
 [ -f "$HOME/.zshrc.local" ] && source "$HOME/.zshrc.local"

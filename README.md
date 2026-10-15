@@ -51,6 +51,7 @@ sandbar re-renders `~/.gitconfig`, `~/.tmux.conf` and a managed block in `~/.bas
 
 - **git:** settings go in `~/.config/git/config`, which git reads alongside `~/.gitconfig`. Name, email and the credential helper still come from sandbar. Commit signing is off because the VM has no GPG key.
 - **zsh:** zsh doesn't read `~/.bashrc`. `zsh/sandbar.zsh` repeats what the managed block sets: `PATH`, `IS_SANDBOX`, `EDITOR`, the direnv hook and `~/.config/sandbar/secrets.env`.
+- **prompt:** `zsh/zshrc` prefixes the prompt with `[sandbar:<hostname>]` when `IS_SANDBOX` is set, so a VM shell doesn't look like a host shell. It's set after oh-my-zsh loads, because the theme overwrites `PROMPT`.
 
 ## Local overrides and secrets
 
