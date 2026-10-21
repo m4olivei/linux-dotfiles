@@ -13,3 +13,10 @@ fi
 if [ -f "$HOME/.config/sandbar/secrets.env" ]; then
   . "$HOME/.config/sandbar/secrets.env"
 fi
+
+# The managed block also wraps `claude` (sign-in on first run, then
+# --dangerously-skip-permissions). Source sandbar's own copy rather than
+# duplicating it, so a sandbar update to the wrapper reaches zsh too.
+if [ -f "$HOME/.config/sandbar/claude-shell-wrapper.sh" ]; then
+  . "$HOME/.config/sandbar/claude-shell-wrapper.sh"
+fi
